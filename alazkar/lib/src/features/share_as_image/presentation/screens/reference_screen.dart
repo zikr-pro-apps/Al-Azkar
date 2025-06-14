@@ -21,7 +21,7 @@ class ReferenceScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          "الحاشية",
+          "التعليق",
           style: TextStyle(fontFamily: "Uthmanic"),
         ),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -37,36 +37,10 @@ class ReferenceScreen extends StatelessWidget {
             // textAlign: TextAlign.center,
             style: const TextStyle(
               fontFamily: "Kitab",
-              fontSize: 20,
+              fontSize: 25,
               height: 2,
             ),
           ),
-          // ListTile(
-          //   leading: Image.asset(
-          //     "assets/icons/app.png",
-          //   ),
-          //   title: Text("تطبيق الأذكار النووية الإصدار $appVersion"),
-          //   subtitle: const Text("تطبيق مجاني خالي من الإعلانات ومفتوح المصدر"),
-          // ),
-          // const Divider(),
-          // const ListTile(
-          //   leading: Icon(Icons.handshake),
-          //   title: Text("نسألكم الدعاء لنا ولوالدينا"),
-          // ),
-          // const Divider(),
-          // const ListTile(
-          //   leading: Icon(Icons.source_outlined),
-          //   title: Text("المصدر"),
-          //   subtitle: Text("كتاب الأذكار للإمام النووي"),
-          // ),
-          // const Divider(),
-          // ListTile(
-          //   leading: const Icon(Icons.open_in_browser),
-          //   title: const Text("رابط المشروع المفتوح المصدر"),
-          //   onTap: () {
-          //     openURL("https://github.com/muslimpack/Al-Azkar");
-          //   },
-          // ),
         ],
       ),
     );

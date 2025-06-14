@@ -42,7 +42,7 @@ class ZikrContentViewerBottomAppBar extends StatelessWidget {
                     ),
                     SizedBox.fromSize(size: const Size(10, 1)),
                     const Text(
-                      "الشرح",
+                      "التعليق",
                     )
                   ],
                 ),

@@ -1,5 +1,4 @@
 import 'package:alazkar/src/core/constants/const.dart';
-import 'package:alazkar/src/core/utils/open_url.dart';
 import 'package:flutter/material.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -37,8 +36,9 @@ class AboutScreen extends StatelessWidget {
             leading: Image.asset(
               "assets/icons/app.png",
             ),
-            title: Text("تطبيق أذكار الحج والعمرة الإصدار $appVersion"),
-            subtitle: const Text("تطبيق مجاني خالي من الإعلانات ومفتوح المصدر. مقتبس من تطبيق الأذكار النووية للمهندس حسن الطنطاوي"),
+            title: Text("تطبيق $appName الإصدار $appVersion"),
+            subtitle: const Text(
+                "تطبيق مجاني خالي من الإعلانات ومفتوح المصدر. مقتبس من تطبيق الأذكار النووية للمهندس حسن الطنطاوي"),
           ),
           const Divider(),
           const ListTile(
@@ -49,16 +49,17 @@ class AboutScreen extends StatelessWidget {
           const ListTile(
             leading: Icon(Icons.source_outlined),
             title: Text("المصدر"),
-            subtitle: Text("كتاب التذكرة بأذكار الحج والعمرة للشيخ محمد اسماعيل المقدم"),
+            subtitle: Text(
+                "كتاب التذكرة بأذكار الحج والعمرة للشيخ محمد اسماعيل المقدم"),
           ),
-          const Divider(),
-          ListTile(
-            leading: const Icon(Icons.open_in_browser),
-            title: const Text("رابط تطبيق الأذكار النووية المفتوح المصدر"),
-            onTap: () {
-              openURL("https://github.com/muslimpack/Al-Azkar");
-            },
-          ),
+          // const Divider(),
+          // ListTile(
+          //   leading: const Icon(Icons.open_in_browser),
+          //   title: const Text("رابط تطبيق الأذكار النووية المفتوح المصدر"),
+          //   onTap: () {
+          //     openURL("https://github.com/muslimpack/Al-Azkar");
+          //   },
+          // ),
         ],
       ),
     );

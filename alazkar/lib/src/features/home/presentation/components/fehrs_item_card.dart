@@ -17,33 +17,41 @@ class FehrsItemCard extends StatelessWidget {
       leading: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(minWidth: 25),
-                child: Text(zikrTitle.order.toString()),
-              ),
-            ),
-          ),
+          // Card(
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(10),
+          //     child: ConstrainedBox(
+          //       constraints: const BoxConstraints(minWidth: 25),
+          //       child: Text(zikrTitle.order.toString()),
+          //     ),
+          //   ),
+          // ),
           if (zikrTitle.isBookmarked!)
-            IconButton(
-              onPressed: () {
-                context
-                    .read<HomeBloc>()
-                    .add(HomeUnBookmarkTitleEvent(zikrTitle));
-              },
-              icon: const Icon(
-                Icons.bookmark,
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: IconButton(
+                onPressed: () {
+                  context
+                      .read<HomeBloc>()
+                      .add(HomeUnBookmarkTitleEvent(zikrTitle));
+                },
+                icon: const Icon(
+                  Icons.bookmark,
+                ),
               ),
             )
           else
-            IconButton(
-              onPressed: () {
-                context.read<HomeBloc>().add(HomeBookmarkTitleEvent(zikrTitle));
-              },
-              icon: const Icon(
-                Icons.bookmark_add_outlined,
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: IconButton(
+                onPressed: () {
+                  context
+                      .read<HomeBloc>()
+                      .add(HomeBookmarkTitleEvent(zikrTitle));
+                },
+                icon: const Icon(
+                  Icons.bookmark_add_outlined,
+                ),
               ),
             ),
         ],

@@ -47,10 +47,10 @@ flutter:
   fonts:
     - family: Uthmanic
       fonts:
-        - asset: assets/fonts/uthmanic_hafs_ver12.otf
+        - asset: assets/fonts/UthmanicHafs1_Ver13.ttf
     - family: Cairo
       fonts:
         - asset: assets/fonts/Cairo-Regular.ttf
     - family: Kitab
       fonts:
-        - asset: assets/fonts/kitab.ttf
+        - asset: assets/fonts/Kitab-Regular.ttf

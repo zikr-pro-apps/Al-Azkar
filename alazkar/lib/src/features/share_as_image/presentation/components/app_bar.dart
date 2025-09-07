@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:alazkar/src/core/constants/const.dart';
 import 'package:alazkar/src/features/share_as_image/presentation/controller/share_as_image/share_as_image_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -43,7 +44,7 @@ class ShareAsImageAppBar extends StatelessWidget {
             ? const SizedBox()
             : LinearProgressIndicator(
                 backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                color: Colors.brown,
+                color: appThemeColor,
                 minHeight: 15,
               ),
       ),

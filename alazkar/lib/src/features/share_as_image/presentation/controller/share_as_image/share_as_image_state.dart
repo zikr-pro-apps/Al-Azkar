@@ -52,10 +52,10 @@ class ShareAsImageLoadedState extends ShareAsImageState {
         Divider(
           thickness: 5,
           height: 40,
-          color: Colors.brown.shade900,
+          color: appThemeColor.shade900,
         ),
         Text(
-          zikr.body,
+          zikr.fullText, // TODO: Fix to render quran correctly
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: fontSize * 1.5,
@@ -65,15 +65,17 @@ class ShareAsImageLoadedState extends ShareAsImageState {
           ),
         ),
         const SizedBox(height: 20),
-        Text(
-          "عدد مرات الذكر: ${zikr.count}",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: fontSize,
-            color: textColor,
-            fontFamily: "Cairo",
-          ),
-        ),
+        if (zikr.count > 1) ...[
+          Text(
+            "عدد مرات الذكر: ${zikr.count}",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: fontSize,
+              color: textColor,
+              fontFamily: "Cairo",
+            ),
+          )
+        ],
         if (zikr.fadl.isNotEmpty) ...[
           const SizedBox(height: 20),
           Text(
@@ -148,7 +150,7 @@ class ShareAsImageData {
   ///
   final String backgroundColorKey = 'share_image_background_color';
   Color get backgroundColor => Color(
-        box.read<int?>(backgroundColorKey) ?? Colors.brown.value,
+        box.read<int?>(backgroundColorKey) ?? appThemeColor.value,
       );
 
   ///

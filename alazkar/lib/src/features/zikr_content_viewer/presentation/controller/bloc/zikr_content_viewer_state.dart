@@ -33,12 +33,7 @@ final class ZikrContentViewerLoadedState extends ZikrContentViewerState {
 
   double progress() {
     final length = azkar.length;
-    final done = azkar.fold(
-      0,
-      (previousValue, element) =>
-          element.count == 0 ? previousValue + 1 : previousValue,
-    );
-
+    final done = azkar.where((e) => e.count == 0).length;
     return done / length;
   }
 

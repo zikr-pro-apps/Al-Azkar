@@ -1,3 +1,4 @@
+import 'package:alazkar/src/core/constants/const.dart';
 import 'package:alazkar/src/features/share_as_image/presentation/components/color_swatch_builder.dart';
 import 'package:alazkar/src/features/share_as_image/presentation/components/width_dialog.dart';
 import 'package:alazkar/src/features/share_as_image/presentation/controller/share_as_image/share_as_image_bloc.dart';
@@ -11,7 +12,7 @@ class ShareAsImageBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Color> colorSwatchList = [
-      Colors.brown,
+      appThemeColor,
       Colors.white,
     ];
     return BlocBuilder<ShareAsImageBloc, ShareAsImageState>(

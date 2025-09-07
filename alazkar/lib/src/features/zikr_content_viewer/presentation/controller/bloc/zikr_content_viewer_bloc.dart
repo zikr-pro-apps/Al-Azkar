@@ -4,6 +4,7 @@ import 'package:alazkar/src/core/helpers/azkar_helper.dart';
 import 'package:alazkar/src/core/manager/volume_button_manager.dart';
 import 'package:alazkar/src/core/models/zikr.dart';
 import 'package:alazkar/src/core/models/zikr_title.dart';
+import 'package:alazkar/src/core/utils/app_print.dart';
 import 'package:alazkar/src/core/utils/show_toast.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -56,6 +57,7 @@ class ZikrContentViewerBloc
     final azkarToSet =
         await azkarDBHelper.getContentByTitleId(event.zikrTitle.id);
 
+    appPrint("Azkir to set:$azkarToSet");
     emit(
       ZikrContentViewerLoadedState(
         zikrTitle: zikrTitle,
@@ -78,7 +80,7 @@ class ZikrContentViewerBloc
 
     if (countToSet == 0) {
       pageController.nextPage(
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 600),
         curve: Curves.easeInOut,
       );
     }
@@ -112,7 +114,7 @@ class ZikrContentViewerBloc
     final state = this.state;
     if (state is! ZikrContentViewerLoadedState) return;
 
-    await Clipboard.setData(ClipboardData(text: state.activeZikr.body));
+    await Clipboard.setData(ClipboardData(text: state.activeZikr.fullText));
 
     showToast("تم نسخ الذكر");
   }
@@ -124,7 +126,7 @@ class ZikrContentViewerBloc
     final state = this.state;
     if (state is! ZikrContentViewerLoadedState) return;
 
-    Share.share(state.activeZikr.body);
+    Share.share(state.activeZikr.fullText);
   }
 
   Future _activateVolumeHandler(MethodCall call) async {

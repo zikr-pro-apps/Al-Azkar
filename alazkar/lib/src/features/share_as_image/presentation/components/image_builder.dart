@@ -1,3 +1,4 @@
+import 'package:alazkar/src/core/constants/const.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,7 @@ class ImageBuilder extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
       ),
       child: DottedBorder(
-        color: Colors.brown.shade900,
+        color: appThemeColor.shade900,
         borderType: BorderType.RRect,
         radius: const Radius.circular(25),
         dashPattern: const [10, 0, 10],
@@ -47,7 +48,7 @@ class ImageBuilder extends StatelessWidget {
               Divider(
                 thickness: 5,
                 height: 40,
-                color: Colors.brown.shade900,
+                color: appThemeColor.shade900,
               ),
               _footer()
             ],
@@ -72,7 +73,7 @@ class ImageBuilder extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
-                  "بواسطة تطبيق الأذكار النووية",
+                  "بواسطة تطبيق $appName",
                   style: TextStyle(
                     fontSize: fontSize * (3 / 3),
                     color: textColor,

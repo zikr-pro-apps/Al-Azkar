@@ -112,7 +112,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
           : const TabBar(
               tabs: [
                 Tab(child: Text("فهرس")),
-                Tab(child: Text("المفضلة")),
+                // Tab(child: Text("المفضلة")),
               ],
             ),
     );

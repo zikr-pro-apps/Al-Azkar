@@ -1,3 +1,4 @@
+import 'package:alazkar/src/core/constants/const.dart';
 import 'package:alazkar/src/features/home/presentation/controller/home/home_bloc.dart';
 import 'package:alazkar/src/features/home/presentation/screens/home_page_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
         title: 'Al-Azkar',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.brown,
-            brightness: Brightness.dark,
+            seedColor: appThemeColor,
+            // brightness: Brightness.dark,
           ),
           fontFamily: "Cairo",
           useMaterial3: true,
